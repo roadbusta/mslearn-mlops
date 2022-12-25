@@ -18,7 +18,7 @@ def main(args):
     mlflow.autolog()
 
     # read data
-    df = get_csvs_df(args.training_data)
+    df = get_csvs_df(args.diabetes_csv)
 
     # split data
     X_train, X_test, y_train, y_test = split_data(df)
@@ -54,7 +54,7 @@ def parse_args():
     parser = argparse.ArgumentParser()
 
     # add arguments
-    parser.add_argument("--training_data", dest='training_data',
+    parser.add_argument("--diabetes-csv", dest='diabetes_csv',
                         type=str)
     parser.add_argument("--reg_rate", dest='reg_rate',
                         type=float, default=0.01)
